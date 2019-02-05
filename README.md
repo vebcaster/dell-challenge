@@ -26,5 +26,5 @@
     
 5. Project: __DellChallenge.D2.Web__
     * Change `ProductController`:
-        * Add `Update` method in  and create necessay view with logic files;
+        * Add `Update` method and create necessay view with logic;
         * Implement validation for mandatory field `Name` on `Product` in `Add` and `Update` methods;
