@@ -7,6 +7,8 @@ namespace DellChallenge.B
         static void Main(string[] args)
         {
             // Given the classes and interface below, please constructor the proper hierarchy.
+            // Feel free to refactor and restructure the classes/interface below.
+            // (Hint: Not all species and Fly and/or Swim)
         }
     }
 

@@ -6,7 +6,7 @@ namespace DellChallenge.A
     {
         static void Main(string[] args)
         {
-            // Console output order. Why?
+            // State and explain console output order.
             new B();
             Console.ReadKey();
         }
