@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DellChallenge.D2.Web.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+<h4>All Products</h4>
+<hr />
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-4">
+            @item.Name - @item.Category
+        </div>
+    </div>
+}
