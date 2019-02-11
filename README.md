@@ -18,9 +18,10 @@
     * Please idenfity the following class _Program.cs_, then state and explain the comment in the main method;
     
 4. Project: __DellChallenge.D1.Api__
-    * Implement Get(id) method;
-    * Implement Delete method;
-    * Implement Put method;
+    * Change `ProductsController`:
+        * Implement Get(id) method;
+        * Implement Delete method;
+        * Implement Put method;
     
 5. Project: __DellChallenge.D2.Web__
     * Change `ProductController`:
