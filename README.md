@@ -28,4 +28,6 @@
         * Add `Update` method and create necessay view with logic;
         * Implement validation for mandatory field `Name` on `Product` in `Add` and `Update` methods;
 
-# NOTE: Please provide solution by sending link to forked repository
+# NOTES:
+* __Please provide solution by sending link to forked repository;__
+* __NOTE: Entire solution must compile;__
