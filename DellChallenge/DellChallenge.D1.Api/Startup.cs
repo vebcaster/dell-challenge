@@ -29,6 +29,18 @@ namespace DellChallenge.D1.Api
             {
                 c.SwaggerDoc("v1", new Info { Title = "Products API", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowReactCors",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials();
+                    });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -46,6 +58,7 @@ namespace DellChallenge.D1.Api
             });
 
             app.UseMvc();
+            app.UseCors();
         }
     }
 }
