@@ -36,5 +36,5 @@
 
 # NOTES:
 * __Please provide solution by sending link to forked repository;__
-* __NOTE: Entire solution must compile;__
+* __Entire solution must compile;__
 * __To run the React app, you need to download and install Node.js from https://nodejs.org/en/ and run `npm start` in cmd\bash console__
