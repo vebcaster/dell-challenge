@@ -10,30 +10,54 @@ namespace DellChallenge.C
             //      1. clean coding
             //      2. naming standards
             //      3. code reusability, hence maintainability
-            StartHere();
+            IntegerAdditionDemo();
             Console.ReadKey();
         }
 
-        private static void StartHere()
+        /// <summary>
+        /// Demo method for working with IntegerAddition class
+        /// </summary>
+        private static void IntegerAdditionDemo()
         {
-            myObject _MyNewObject = new myObject();
-            int obj1 = _MyNewObject.Do(1, 3);
-            int num2 = _MyNewObject.DoExtended(1, 3, 5);
-            Console.WriteLine(obj1);
-            Console.WriteLine(num2);
+            // Create new instance of the IntegerAddition
+            IntegerAddition integerAddition = new IntegerAddition();
+
+            // Perform two basic additions, one with two terms and another with three terms
+            int sum1 = integerAddition.Add(1, 3);
+            int sum2 = integerAddition.Add(1, 3, 5);
+
+            // Display the result
+            Console.WriteLine($"First result is {sum1}");
+            Console.WriteLine($"Second result is {sum2}");
         }
     }
 
-    class myObject
+    /// <summary>
+    /// Performs addition of integer numbers
+    /// </summary>
+    public class IntegerAddition
     {
-
-        public int Do(int a, int b)
+        /// <summary>
+        /// Adds two integer numbers (terms) and returns the result (their sum)
+        /// </summary>
+        /// <param name="firstTerm">First term of the addition</param>
+        /// <param name="secondTerm">Second term of the addition</param>
+        /// <returns>The sum of firstTerm and secondTerm, e.g. firstTerm + secondTerm.</returns>
+        public int Add(int firstTerm, int secondTerm)
         {
-            return a + b;
+            return firstTerm + secondTerm;
         }
 
-        public int DoExtended(int a, int b, int c)
-        { return a + b + c;
+        /// <summary>
+        /// Adds three integer numbers (terms) and returns the result (their sum)
+        /// </summary>
+        /// <param name="firstTerm">First term of the addition</param>
+        /// <param name="secondTerm">Second term of the addition</param>
+        /// <param name="thirdTerm">Third term of the addition</param>
+        /// <returns>The sum of firstTerm, secondTerm, and thirdTerm, e.g. firstTerm + secondTerm + thirdTerm.</returns>
+        public int Add(int firstTerm, int secondTerm, int thirdTerm)
+        {
+            return firstTerm + secondTerm + thirdTerm;
         }
     }
 }

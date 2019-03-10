@@ -2,7 +2,9 @@
 using DellChallenge.D1.Api.Dto;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DellChallenge.D1.Api.Controllers
 {
@@ -26,9 +28,12 @@ namespace DellChallenge.D1.Api.Controllers
 
         [HttpGet("{id}")]
         [EnableCors("AllowReactCors")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<ProductDto> Get(string id)
         {
-            return "value";
+            var productDto = _productsService.Get(id);
+            if (productDto != null)
+                return Ok(productDto);
+            return NotFound();
         }
 
         [HttpPost]
@@ -41,14 +46,32 @@ namespace DellChallenge.D1.Api.Controllers
 
         [HttpDelete("{id}")]
         [EnableCors("AllowReactCors")]
-        public void Delete(int id)
+        public ActionResult Delete(string id)
         {
+            try
+            {
+                _productsService.Delete(id);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return NotFound();
+            }
+            return Ok();
         }
 
         [HttpPut("{id}")]
         [EnableCors("AllowReactCors")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put(string id, [FromBody] NewProductDto product)
         {
+            try
+            {
+                _productsService.Update(id, product);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return NotFound();
+            }
+            return Ok();
         }
     }
 }

@@ -9,12 +9,22 @@ class NewProduct extends Component {
       Name: "",
       Category: "",
       Success: false,
+      validateError: null,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit = event => {
     event.preventDefault();
+
+    // Validation
+    if (!this.state.Name) {
+      this.setState({
+        validateError: 'The name is required',
+      })
+      return;
+    }
+
     let postData = {
       Name: this.state.Name,
       Category: this.state.Category
@@ -42,12 +52,19 @@ class NewProduct extends Component {
     this.setState({
       [name]: value
     });
+
+    if (this.state.Name) {
+      this.setState({
+        validateError: null,
+      });
+    }
   };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <h4>Add new Product</h4>
+        <div className="text-danger field-validation-valid">{this.state.validateError}</div>
         <div className="form-group">
           <label className="control-label" htmlFor="Name">
             Name

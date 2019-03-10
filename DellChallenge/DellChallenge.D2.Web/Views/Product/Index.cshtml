@@ -10,7 +10,7 @@
 {
     <div class="row">
         <div class="col-md-4">
-            @item.Name - @item.Category
+            @item.Name - @item.Category - <a href="/product/update/@item.Id">update</a> - <a href="/product/delete/@item.Id" onclick="return confirm('are you sure?')">delete</a>
         </div>
     </div>
 }
